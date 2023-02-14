@@ -1,17 +1,16 @@
 package main;
 
 import java.util.List;
+import java.util.Map;
 
 public class Effet {
     private String gD;
     private String nom;
-    private List<Jauge> jauges;
-    private List<Integer> valeurs;
+    private Map<TypeJauge,Integer> effetsJauges;
 
-    public Effet(String gD, String nom, List<Jauge> jauges, List<Integer> valeurs) {
+    public Effet(String gD, String nom, Map<TypeJauge, Integer> effetsJauges) {
         this.gD = gD;
         this.nom = nom;
-        this.jauges = jauges;
-        this.valeurs = valeurs;
+        this.effetsJauges = effetsJauges;
     }
 }
