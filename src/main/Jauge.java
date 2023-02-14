@@ -1,5 +1,4 @@
 package main;
-
 /**
  * Représente une jauge avec un nom, une valeur et un type.
  *
@@ -10,11 +9,8 @@ public class Jauge {
     /**
      * Le type de la jauge
      */
-    protected TypeJauge type;
-    /**
-     * Le nom de la jauge
-     */
-    protected String nom;
+    protected TypeJauge type; // fusionner type et nom
+
     /**
      * La valeur de la jauge
      */
@@ -26,8 +22,8 @@ public class Jauge {
      * @param nom Le nom de la jauge
      * @param valeur La valeur de la jauge
      */
-    public Jauge(String nom, int valeur){
-        this.nom = nom;
+    public Jauge(TypeJauge nom, int valeur){
+        this.type = nom;
         this.valeur = valeur;
     }
 
@@ -37,16 +33,7 @@ public class Jauge {
      * @return le nom de la jauge
      */
     public String getNom() {
-        return nom;
-    }
-
-    /**
-     * Modifie le nom de la jauge.
-     *
-     * @param nom Le nouveau nom de la jauge
-     */
-    public void setNom(String nom) {
-        this.nom = nom;
+        return getNom().toString();
     }
 
     /**
@@ -67,21 +54,4 @@ public class Jauge {
         this.valeur = valeur;
     }
 
-    /**
-     * Retourne le type de la jauge.
-     *
-     * @return le type de la jauge
-     */
-    public TypeJauge getType() {
-        return type;
-    }
-
-    /**
-     * Modifie le type de la jauge.
-     *
-     * @param type Le nouveau type de la jauge
-     */
-    public void setType(TypeJauge type) {
-        this.type = type;
-    }
 }

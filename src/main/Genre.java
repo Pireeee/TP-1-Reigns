@@ -1,5 +1,4 @@
 package main;
-
 /**
  * Représente les différents genres possibles.
  *
@@ -15,15 +14,12 @@ public enum Genre {
      * Genre féminin
      */
     REINE;
-
     /**
      * Retourne une chaîne de caractères indiquant "Long règne au roi" ou "Long règne à la reine"
      *
      * @return une chaîne de caractères indiquant "Long règne au roi" ou "Long règne à la reine"
      */
     public String longRegne(){
-        if(this==ROI)
-            return "Long règne au roi ";
-        return "Long règne à la reine";
+        return this == ROI ? "Long règne au roi " : "Long règne à la reine";
     }
 }

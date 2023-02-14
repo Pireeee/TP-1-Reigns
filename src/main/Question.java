@@ -117,24 +117,16 @@ public class Question {
         for(Map.Entry<TypeJauge,Integer> effet : effets.entrySet()){
             switch(effet.getKey()){
                 case ARMEE:
-                    personnage.getJaugeArmee().setValeur(
-                            personnage.getJaugeArmee().getValeur()
-                                    +effet.getValue());
+                    personnage.jaugeArmee.valeur += effet.getValue();
                     break;
                 case CLERGE:
-                    personnage.getJaugeClerge().setValeur(
-                            personnage.getJaugeClerge().getValeur()
-                                    +effet.getValue());
+                    personnage.jaugeClerge.valeur += effet.getValue();
                     break;
                 case FINANCE:
-                    personnage.getJaugeFinance().setValeur(
-                            personnage.getJaugeFinance().getValeur()
-                                    +effet.getValue());
+                    personnage.jaugeFinance.valeur += effet.getValue();
                     break;
                 case PEUPLE:
-                    personnage.getJaugePeuple().setValeur(
-                            personnage.getJaugePeuple().getValeur()
-                                    +effet.getValue());
+                    personnage.jaugePeuple.valeur +=effet.getValue();
                     break;
             }
         }

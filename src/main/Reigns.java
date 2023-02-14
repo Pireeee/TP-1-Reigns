@@ -98,14 +98,7 @@ public class Reigns {
         System.out.println(
                 "Faut-il vous appeler Roi ou Reine ? (1 pour Roi, 2 pour Reine)");
         int genre = scanner.nextInt();
-        Genre roiReine;
-        if(genre==1){
-            roiReine = Genre.ROI;
-        }else{
-            roiReine = Genre.REINE;
-        }
-
-        Reigns.personnage = new Personnage(nom,roiReine);
+        Reigns.personnage = new Personnage(nom, genre==1 ? Genre.ROI : Genre.REINE );
     }
 
     /**
@@ -167,7 +160,6 @@ public class Reigns {
      * @return Une question aléatoire
      */
     private static Question getQuestionAleatoire(){
-        int numQuestion = (int) (Math.random()*questions.size());
-        return questions.get(numQuestion);
+        return questions.get((int) (Math.random()*questions.size()));
     }
 }

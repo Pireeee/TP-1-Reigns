@@ -1,11 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6e158a1a-5df0-4baf-8107-6e571ac3dc1c" name="Changes" comment="" />
+    <list default="true" id="6e158a1a-5df0-4baf-8107-6e571ac3dc1c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/Effet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/JaugeArmee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/JaugeClerge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/JaugeFinance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/JaugePeuple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Genre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Jauge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Jauge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Personnage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Personnage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Reigns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Reigns.java" afterDir="false" />
+    </list>
+    <list id="1b299203-4821-42d0-833d-0b6a1a1d4ab7" name="Changes by franc" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/Reigns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Reigns.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/Reigns.java">
+      <ranges>
+        <range start1="100" end1="108" start2="100" end2="101" changelist="6e158a1a-5df0-4baf-8107-6e571ac3dc1c" />
+        <range start1="169" end1="171" start2="162" end2="163" changelist="1b299203-4821-42d0-833d-0b6a1a1d4ab7" />
+      </ranges>
+    </file>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2L8io0PJqwGmAcIGWR2ZIXD8fBA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -18,6 +54,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/pierr/OneDrive/Documents/Cours/Licence 3/Design patern/TP-1-Reigns",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -29,7 +66,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675259283620</updated>
+      <workItem from="1676379338537" duration="3311000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
