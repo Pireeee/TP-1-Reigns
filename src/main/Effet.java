@@ -13,4 +13,41 @@ public class Effet {
         this.nom = nom;
         this.effetsJauges = effetsJauges;
     }
+
+    public String getgD() {
+        return gD;
+    }
+
+    public void setgD(String gD) {
+        this.gD = gD;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public Map<TypeJauge, Integer> getEffetsJauges() {
+        return effetsJauges;
+    }
+
+    public void putEffetsJauges(TypeJauge jauge, Integer valeur) {
+        this.effetsJauges.put(jauge,valeur);
+    }
+
+    public String afficheEffets() {
+        StringBuilder result = new StringBuilder();
+        result.append("Effet "+this.gD);
+        for (Map.Entry<TypeJauge, Integer> effet : this.effetsJauges.entrySet()) {
+            result.append("; jauge ").append(effet.getKey()).append(":");
+            if (effet.getValue() > 0) {
+                result.append("+");
+            }
+            result.append(effet.getValue());
+        }
+        return result.toString();
+    }
 }

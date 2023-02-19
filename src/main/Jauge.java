@@ -5,7 +5,7 @@ package main;
  * @author Julie Jacques / Lucien Mousin
  * @version 1.0
  */
-public class Jauge {
+public abstract class Jauge {
     /**
      * Le type de la jauge
      */
@@ -26,6 +26,26 @@ public class Jauge {
         this.type = nom;
         this.valeur = valeur;
     }
+    /**
+     * Affiche une jauge avec un format graphique, en utilisant des "#" pour représenter la valeur de la jauge
+     * et des "_" pour représenter la valeur manquante.
+     *
+     */
+    public void afficheJauge() {
+        String resultat = "[";
+        // valeur : ####
+        for(int i=0;i<this.getValeur();i++){
+            resultat += "#";
+        }
+        // on complète avec ____
+        for(int i = 0; i<50-(Math.max(this.getValeur(), 0)); i++){
+            resultat += "_";
+        }
+        resultat += "] ";
+        // affichage du nom
+        resultat += this.getNom();
+        System.out.println(resultat);
+    }
 
     /**
      * Retourne le nom de la jauge.
@@ -33,7 +53,7 @@ public class Jauge {
      * @return le nom de la jauge
      */
     public String getNom() {
-        return getNom().toString();
+        return type.name().toLowerCase();
     }
 
     /**

@@ -1,7 +1,6 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * La classe Reigns représente le programme principal du jeu Reigns
@@ -14,7 +13,6 @@ public class Reigns {
      * le personnage joué
      */
     private static Personnage personnage;
-
     /**
      * la banque de questions
      */
@@ -109,12 +107,13 @@ public class Reigns {
         Question question1 = new Question(
                 "Main du roi",
                 "Le peuple souhaite libérer les prisonniers",
-                "Oui",
-                "Non");
-        question1.ajouteEffetGauche(TypeJauge.ARMEE, -5);
-        question1.ajouteEffetGauche(TypeJauge.PEUPLE, +5);
-        question1.ajouteEffetDroite(TypeJauge.PEUPLE, -7);
+                new Effet("G","Oui",HashMap.newHashMap(2)),
+                new Effet("D","Non", HashMap.newHashMap(1)));
+        question1.effetDroite.putEffetsJauges(TypeJauge.ARMEE, -5);
+        question1.effetDroite.putEffetsJauges(TypeJauge.PEUPLE, +5);
+        question1.effetGauche.putEffetsJauges(TypeJauge.PEUPLE, -7);
         questions.add(question1);
+        /*
         Question question2 = new Question(
                 "Paysan",
                 "Il n'y a plus rien à manger",
@@ -153,6 +152,7 @@ public class Reigns {
         question5.ajouteEffetDroite(TypeJauge.FINANCE, +1);
         question5.ajouteEffetDroite(TypeJauge.PEUPLE, -3);
         questions.add(question5);
+        */
     }
 
     /**
