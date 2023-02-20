@@ -1,11 +1,14 @@
-package main;
+package main.Jauges;
+
+import main.TypeJauge;
+
 /**
  * Représente une jauge avec un nom, une valeur et un type.
  *
  * @author Julie Jacques / Lucien Mousin
  * @version 1.0
  */
-public abstract class Jauge {
+public class Jauge {
     /**
      * Le type de la jauge
      */
@@ -72,6 +75,10 @@ public abstract class Jauge {
      */
     public void setValeur(int valeur) {
         this.valeur = valeur;
+    }
+
+    public void addValeur(Integer value){
+        this.valeur += value;
     }
 
 }
