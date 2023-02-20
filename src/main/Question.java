@@ -2,6 +2,7 @@ package main;
 
 import java.util.HashMap;
 import java.util.Map;
+import main.Jauges.*;
 import java.util.TreeMap;
 
 /**
