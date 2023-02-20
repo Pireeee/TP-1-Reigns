@@ -1,4 +1,6 @@
-package main;
+package main.Jauges;
+
+import main.TypeJauge;
 
 public class JaugeArmee extends Jauge{
 

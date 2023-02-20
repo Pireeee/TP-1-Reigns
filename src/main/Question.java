@@ -1,6 +1,7 @@
 package main;
 
 import java.util.Map;
+import main.Jauges.*;
 import java.util.TreeMap;
 
 /**
@@ -71,16 +72,16 @@ public class Question {
         for(Map.Entry<TypeJauge,Integer> effet : effets.entrySet()){
             switch(effet.getKey()){
                 case ARMEE:
-                    personnage.jaugeArmee.valeur += effet.getValue();
+                    personnage.jaugeArmee.setValeur(effet.getValue());
                     break;
                 case CLERGE:
-                    personnage.jaugeClerge.valeur += effet.getValue();
+                    personnage.jaugeClerge.setValeur(effet.getValue());
                     break;
                 case FINANCE:
-                    personnage.jaugeFinance.valeur += effet.getValue();
+                    personnage.jaugeFinance.setValeur(effet.getValue());
                     break;
                 case PEUPLE:
-                    personnage.jaugePeuple.valeur +=effet.getValue();
+                    personnage.jaugePeuple.setValeur(effet.getValue());
                     break;
             }
         }
