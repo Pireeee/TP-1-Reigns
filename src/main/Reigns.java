@@ -77,9 +77,9 @@ public class Reigns {
         }
         // applique les malus
         if(reponse.equals("G")){
-            question.appliqueEffetsGauche(personnage);
+            question.effetGauche.AppliqueEffect(personnage);
         }else{
-            question.appliqueEffetsDroite(personnage);
+            question.effetGauche.AppliqueEffect(personnage);
         }
     }
 

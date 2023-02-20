@@ -51,8 +51,8 @@ public class Question {
     public void afficheQuestion() {
         String result = "["+nomPersonnage+"] "
                 + question
-                + "[G: "+effetGauche
-                + ",D: "+effetDroite
+                + "[G: "+effetGauche.getNom()
+                + ",D: "+effetDroite.getNom()
                 + "]";
         System.out.println(result);
         effetGauche.afficheEffets();
@@ -66,24 +66,9 @@ public class Question {
      * @param effets les effets de jauge à appliquer
      * @param personnage le personnage sur lequel les effets doivent être appliqués
      */
-    private void appliqueEffets(Map<TypeJauge,Integer> effets,
-                                Personnage personnage){
-        for(Map.Entry<TypeJauge,Integer> effet : effets.entrySet()){
-            switch(effet.getKey()){
-                case ARMEE:
-                    personnage.jaugeArmee.valeur += effet.getValue();
-                    break;
-                case CLERGE:
-                    personnage.jaugeClerge.valeur += effet.getValue();
-                    break;
-                case FINANCE:
-                    personnage.jaugeFinance.valeur += effet.getValue();
-                    break;
-                case PEUPLE:
-                    personnage.jaugePeuple.valeur +=effet.getValue();
-                    break;
-            }
-        }
+    private void appliqueEffets(Personnage personnage, String gD){
+
+
     }
 
     /**
@@ -138,13 +123,4 @@ public class Question {
         this.effetDroite = effetDroite;
     }
 
-    //a finir
-    public void appliqueEffet(Personnage personnage,String gD){
-        if (gD.equals("G")){
-            for (Map.Entry<TypeJauge, Integer> effet : effetGauche.getEffetsJauges().entrySet()) {
-                // a finir
-            }
-        }
-
-    }
 }

@@ -50,4 +50,22 @@ public class Effet {
         }
         return result.toString();
     }
+    public void AppliqueEffect(Personnage personnage){
+        for (TypeJauge type: this.effetsJauges.keySet()) {
+            switch(type){
+                case ARMEE:
+                    personnage.jaugeArmee.valeur += this.effetsJauges.get(TypeJauge.ARMEE);
+                    break;
+                case CLERGE:
+                    personnage.jaugeClerge.valeur += this.effetsJauges.get(TypeJauge.CLERGE);
+                    break;
+                case FINANCE:
+                    personnage.jaugeFinance.valeur += this.effetsJauges.get(TypeJauge.FINANCE);
+                    break;
+                case PEUPLE:
+                    personnage.jaugePeuple.valeur += this.effetsJauges.get(TypeJauge.PEUPLE);
+                    break;
+            }
+        }
+    }
 }
