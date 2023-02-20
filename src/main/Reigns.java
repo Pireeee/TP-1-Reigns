@@ -1,6 +1,8 @@
 package main;
 
+import main.question.BanqueQuestion;
 import main.Jauges.JaugeManager;
+import main.question.Question;
 
 import java.util.*;
 
@@ -18,7 +20,7 @@ public class Reigns {
     /**
      * la banque de questions
      */
-    private static ArrayList<Question> questions;
+    private static List<Question> questions;
 
     private static JaugeManager jaugeManager;
 
@@ -34,7 +36,7 @@ public class Reigns {
         // début du jeu
         System.out.println("Bienvenue sur Reigns");
 
-        initBanqueQuestions();
+        questions = BanqueQuestion.init();
 
         System.out.println("Création du personnage...");
 
@@ -82,7 +84,7 @@ public class Reigns {
             reponse = scanner.nextLine();
         }
         // applique les malus
-        question.effets.get(reponse).AppliqueEffect(jaugeManager);
+        question.getReponses().get(reponse).AppliqueReponse(jaugeManager);
 
     }
 
@@ -100,65 +102,6 @@ public class Reigns {
                 "Faut-il vous appeler Roi ou Reine ? (1 pour Roi, 2 pour Reine)");
         int genre = scanner.nextInt();
         Reigns.personnage = new Personnage(nom, genre==1 ? Genre.ROI : Genre.REINE );
-    }
-
-    /**
-     * Cette fonction initialise la banque de questions. Elle crée les questions et les ajoute à la banque.
-     */
-    private static void initBanqueQuestions(){
-        questions = new ArrayList<>();
-        Question question1 = new Question(
-                "Main du roi",
-                "Le peuple souhaite libérer les prisonniers",
-                new HashMap<>(){{
-                    put("G", new Effet("G","Oui", HashMap.newHashMap(2)));
-                    put("D",new Effet("D","Non", HashMap.newHashMap(1)));
-                }}
-                );
-        question1.effets.get("D").putEffetsJauges(TypeJauge.ARMEE, -5);
-        question1.effets.get("D").putEffetsJauges(TypeJauge.PEUPLE, +5);
-        question1.effets.get("G").putEffetsJauges(TypeJauge.PEUPLE, -7);
-        questions.add(question1);
-        /*
-        Question question2 = new Question(
-                "Paysan",
-                "Il n'y a plus rien à manger",
-                "Importer de la nourriture",
-                "Ne rien faire");
-        question2.ajouteEffetGauche(TypeJauge.FINANCE,-5);
-        question2.ajouteEffetGauche(TypeJauge.PEUPLE, +5);
-        question2.ajouteEffetDroite(TypeJauge.PEUPLE, -5);
-        questions.add(question2);
-        Question question3 = new Question(
-                "Prêtre",
-                "Les dieux sont en colère",
-                "Faire un sacrifice",
-                "Ne rien faire");
-        question3.ajouteEffetGauche(TypeJauge.CLERGE, +5);
-        question3.ajouteEffetGauche(TypeJauge.PEUPLE, -3);
-        question3.ajouteEffetDroite(TypeJauge.CLERGE, -5);
-        questions.add(question3);
-        Question question4 = new Question(
-                "Main du roi",
-                "Le roi Baratheon rassemble son armée",
-                "Le soutenir",
-                "Rester neutre");
-        question4.ajouteEffetGauche(TypeJauge.ARMEE, +3);
-        question4.ajouteEffetGauche(TypeJauge.FINANCE, -3);
-        question4.ajouteEffetGauche(TypeJauge.CLERGE, -3);
-        question4.ajouteEffetDroite(TypeJauge.PEUPLE, +3);
-        questions.add(question4);
-        Question question5 = new Question(
-                "Paysan",
-                "Abondance de récoltes cette année",
-                "Taxer énormément",
-                "Taxer un tout petit peu");
-        question5.ajouteEffetGauche(TypeJauge.FINANCE, +10);
-        question5.ajouteEffetGauche(TypeJauge.PEUPLE, -5);
-        question5.ajouteEffetDroite(TypeJauge.FINANCE, +1);
-        question5.ajouteEffetDroite(TypeJauge.PEUPLE, -3);
-        questions.add(question5);
-        */
     }
 
     /**

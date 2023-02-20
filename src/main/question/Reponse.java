@@ -1,21 +1,20 @@
-package main;
+package main.question;
 
-import java.util.Collection;
 import java.util.HashMap;
 import main.Jauges.JaugeManager;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import main.TypeJauge;
 
-public class Effet {
+import java.util.Map;
+
+public class Reponse {
     private String direction;
     private String nom;
-    private Map<TypeJauge,Integer> effetsJauges;
+    private Map<TypeJauge,Integer> effets;
 
-    public Effet(String direction, String nom) {
+    public Reponse(String direction, String nom) {
         this.direction = direction;
         this.nom = nom;
-        this.effetsJauges = new HashMap<>();
+        this.effets = new HashMap<>();
     }
 
     public String getDirection() {
@@ -34,18 +33,18 @@ public class Effet {
         this.nom = nom;
     }
 
-    public Map<TypeJauge, Integer> getEffetsJauges() {
-        return effetsJauges;
+    public Map<TypeJauge, Integer> getEffets() {
+        return effets;
     }
 
-    public void putEffetsJauges(TypeJauge jauge, Integer valeur) {
-        this.effetsJauges.put(jauge,valeur);
+    public void putEffets(TypeJauge jauge, Integer valeur) {
+        this.effets.put(jauge,valeur);
     }
 
-    public String afficheEffets() {
+    public String afficheReponse() {
         StringBuilder result = new StringBuilder();
         result.append("Effet "+this.direction);
-        for (Map.Entry<TypeJauge, Integer> effet : this.effetsJauges.entrySet()) {
+        for (Map.Entry<TypeJauge, Integer> effet : this.effets.entrySet()) {
             result.append("; jauge ").append(effet.getKey()).append(":");
             if (effet.getValue() > 0) {
                 result.append("+");
@@ -54,9 +53,9 @@ public class Effet {
         }
         return result.toString();
     }
-    public void AppliqueEffect(JaugeManager jaugeManager){
-        for (TypeJauge type: this.effetsJauges.keySet()) {
-            jaugeManager.getJauges().get(type).addValeur( this.effetsJauges.get(type));
+    public void AppliqueReponse(JaugeManager jaugeManager){
+        for (TypeJauge type: this.effets.keySet()) {
+            jaugeManager.getJauges().get(type).addValeur( this.effets.get(type));
         }
     }
 }

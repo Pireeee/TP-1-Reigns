@@ -1,9 +1,7 @@
-package main;
+package main.question;
 
 import java.util.HashMap;
 import java.util.Map;
-import main.Jauges.*;
-import java.util.TreeMap;
 
 /**
  * La classe Question représente une question avec ses effets sur les jauges d'un personnage
@@ -26,9 +24,10 @@ public class Question {
     /**
      * les effets
      * */
-    protected Map<String,Effet> effets;
+    protected Map<String, Reponse> reponses;
 
     public Question() {
+        reponses = new HashMap<>();
     }
 
     /**
@@ -37,12 +36,12 @@ public class Question {
     public void afficheQuestion() {
         String result = "["+nomPersonnage+"] "
                 + question
-                + "[G: "+effets.get("G").getNom()
-                + ",D: "+effets.get("D").getNom()
+                + "[G: "+ reponses.get("G").getNom()
+                + ",D: "+ reponses.get("D").getNom()
                 + "]";
         System.out.println(result);
-        for(String gD: effets.keySet()){
-            effets.get(gD).afficheEffets();
+        for(String gD: reponses.keySet()){
+            reponses.get(gD).afficheReponse();
         }
         System.out.flush();
     }
@@ -82,11 +81,12 @@ public class Question {
         this.question = question;
     }
 
-    public Map<String, Effet> getEffets() {
-        return effets;
+    public Map<String, Reponse> getReponses() {
+        return reponses;
     }
 
-    public void addEffets(String direction,Effet effets) {
-        this.effets.replace(direction,effets);
+    public void addReponse(String direction, Reponse reponse) {
+        this.reponses.put(direction,reponse);
     }
+
 }
