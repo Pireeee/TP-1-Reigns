@@ -66,24 +66,9 @@ public class Question {
      * @param effets les effets de jauge à appliquer
      * @param personnage le personnage sur lequel les effets doivent être appliqués
      */
-    private void appliqueEffets(Map<TypeJauge,Integer> effets,
-                                Personnage personnage){
-        for(Map.Entry<TypeJauge,Integer> effet : effets.entrySet()){
-            switch(effet.getKey()){
-                case ARMEE:
-                    personnage.jaugeArmee.valeur += effet.getValue();
-                    break;
-                case CLERGE:
-                    personnage.jaugeClerge.valeur += effet.getValue();
-                    break;
-                case FINANCE:
-                    personnage.jaugeFinance.valeur += effet.getValue();
-                    break;
-                case PEUPLE:
-                    personnage.jaugePeuple.valeur +=effet.getValue();
-                    break;
-            }
-        }
+    private void appliqueEffets(Personnage personnage, String gD){
+
+
     }
 
     /**
