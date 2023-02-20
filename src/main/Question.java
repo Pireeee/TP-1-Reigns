@@ -11,6 +11,9 @@ import java.util.TreeMap;
  * @version 1.0
  */
 public class Question {
+
+    //faire https://refactoring.guru/fr/design-patterns/prototype
+
     /**
      * nom du personnage associé à la question
      */
@@ -24,12 +27,7 @@ public class Question {
      * */
     protected Map<String,Effet> effets;
 
-    public Question(String nomPersonnage,
-                    String question,
-                    Map<String,Effet> effets) {
-        this.nomPersonnage = nomPersonnage;
-        this.question = question;
-        this.effets = effets;
+    public Question() {
     }
 
     /**
@@ -87,7 +85,7 @@ public class Question {
         return effets;
     }
 
-    public void setEffets(Map<String, Effet> effets) {
-        this.effets = effets;
+    public void addEffets(String direction,Effet effets) {
+        this.effets.replace(direction,effets);
     }
 }

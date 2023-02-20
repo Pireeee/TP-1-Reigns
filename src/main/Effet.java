@@ -1,25 +1,27 @@
 package main;
 
-import java.util.List;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class Effet {
-    private String gD;
+    private String direction;
     private String nom;
     private Map<TypeJauge,Integer> effetsJauges;
 
-    public Effet(String gD, String nom, Map<TypeJauge, Integer> effetsJauges) {
-        this.gD = gD;
+    public Effet(String direction, String nom) {
+        this.direction = direction;
         this.nom = nom;
-        this.effetsJauges = effetsJauges;
+        this.effetsJauges = new HashMap<>();
     }
 
-    public String getgD() {
-        return gD;
+    public String getDirection() {
+        return direction;
     }
 
-    public void setgD(String gD) {
-        this.gD = gD;
+    public void setDirection(String direction) {
+        this.direction = direction;
     }
 
     public String getNom() {
@@ -40,7 +42,7 @@ public class Effet {
 
     public String afficheEffets() {
         StringBuilder result = new StringBuilder();
-        result.append("Effet "+this.gD);
+        result.append("Effet "+this.direction);
         for (Map.Entry<TypeJauge, Integer> effet : this.effetsJauges.entrySet()) {
             result.append("; jauge ").append(effet.getKey()).append(":");
             if (effet.getValue() > 0) {
