@@ -76,7 +76,7 @@ public class Reigns {
             reponse = scanner.nextLine();
         }
         // applique les malus
-        question.effets.get(reponse).AppliqueEffect(personnage);
+        question.effets.get(reponse).AppliqueEffect();
 
     }
 

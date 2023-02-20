@@ -77,4 +77,8 @@ public abstract class Jauge {
         this.valeur = valeur;
     }
 
+    public void addValeur(Integer value){
+        this.valeur += value;
+    }
+
 }

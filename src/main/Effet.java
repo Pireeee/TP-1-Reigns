@@ -1,5 +1,7 @@
 package main;
 
+import main.Jauges.JaugeManager;
+
 import java.util.List;
 import java.util.Map;
 
@@ -50,22 +52,9 @@ public class Effet {
         }
         return result.toString();
     }
-    public void AppliqueEffect(Personnage personnage){
+    public void AppliqueEffect(){
         for (TypeJauge type: this.effetsJauges.keySet()) {
-            switch(type){
-                case ARMEE:
-                    personnage.jaugeArmee.valeur += this.effetsJauges.get(TypeJauge.ARMEE);
-                    break;
-                case CLERGE:
-                    personnage.jaugeClerge.valeur += this.effetsJauges.get(TypeJauge.CLERGE);
-                    break;
-                case FINANCE:
-                    personnage.jaugeFinance.valeur += this.effetsJauges.get(TypeJauge.FINANCE);
-                    break;
-                case PEUPLE:
-                    personnage.jaugePeuple.valeur += this.effetsJauges.get(TypeJauge.PEUPLE);
-                    break;
-            }
+            JaugeManager.getJauges().get(type).addValeur( this.effetsJauges.get(type));
         }
     }
 }
