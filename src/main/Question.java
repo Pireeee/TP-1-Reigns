@@ -23,14 +23,14 @@ public class Question {
     /**
      * les effets
      * */
-    protected HashMap<String,Effet> effets;
+    protected Map<String,Effet> effets;
 
     public Question(String nomPersonnage,
                     String question,
                     Map<String,Effet> effets) {
         this.nomPersonnage = nomPersonnage;
         this.question = question;
-        this.effets.putAll(effets);
+        this.effets = effets;
     }
 
     /**
@@ -84,11 +84,11 @@ public class Question {
         this.question = question;
     }
 
-    public HashMap<String, Effet> getEffets() {
+    public Map<String, Effet> getEffets() {
         return effets;
     }
 
-    public void setEffets(HashMap<String, Effet> effets) {
+    public void setEffets(Map<String, Effet> effets) {
         this.effets = effets;
     }
 }
