@@ -15,6 +15,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/JaugePeuple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Jauges/JaugePeuple.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Personnage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Personnage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Reigns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Reigns.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

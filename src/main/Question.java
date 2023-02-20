@@ -1,5 +1,6 @@
 package main;
 
+import java.util.HashMap;
 import java.util.Map;
 import main.Jauges.*;
 import java.util.TreeMap;
@@ -20,30 +21,16 @@ public class Question {
      */
     protected String question;
     /**
-     * l'effet de la réponse de gauche
-     */
-    protected Effet effetGauche;
-    /**
-     * l'effet de la réponse de droite
-     */
-    protected Effet effetDroite;
+     * les effets
+     * */
+    protected HashMap<String,Effet> effets;
 
-    /**
-     * Construit une nouvelle question avec les informations données
-     *
-     * @param nomPersonnage Le nom du personnage associé à la question
-     * @param question La question à poser
-     * @param effetGauche L'effet de la réponse de gauche
-     * @param effetDroite L'effet de la réponse de droite
-     */
     public Question(String nomPersonnage,
                     String question,
-                    Effet effetGauche,
-                    Effet effetDroite) {
+                    Map<String,Effet> effets) {
         this.nomPersonnage = nomPersonnage;
         this.question = question;
-        this.effetGauche = effetGauche;
-        this.effetDroite = effetDroite;
+        this.effets.putAll(effets);
     }
 
     /**
@@ -52,26 +39,15 @@ public class Question {
     public void afficheQuestion() {
         String result = "["+nomPersonnage+"] "
                 + question
-                + "[G: "+effetGauche.getNom()
-                + ",D: "+effetDroite.getNom()
+                + "[G: "+effets.get("G").getNom()
+                + ",D: "+effets.get("D").getNom()
                 + "]";
         System.out.println(result);
-        effetGauche.afficheEffets();
-        effetDroite.afficheEffets();
+        for(String gD: effets.keySet()){
+            effets.get(gD).afficheEffets();
+        }
         System.out.flush();
     }
-
-    /**
-     * Applique les effets d'une jauge sur un personnage donné.
-     *
-     * @param effets les effets de jauge à appliquer
-     * @param personnage le personnage sur lequel les effets doivent être appliqués
-     */
-    private void appliqueEffets(Personnage personnage, String gD){
-
-
-    }
-
     /**
      * Retourne le nom du personnage associé à la question.
      *
@@ -108,20 +84,11 @@ public class Question {
         this.question = question;
     }
 
-    public Effet getEffetGauche() {
-        return effetGauche;
+    public HashMap<String, Effet> getEffets() {
+        return effets;
     }
 
-    public void setEffetGauche(Effet effetGauche) {
-        this.effetGauche = effetGauche;
+    public void setEffets(HashMap<String, Effet> effets) {
+        this.effets = effets;
     }
-
-    public Effet getEffetDroite() {
-        return effetDroite;
-    }
-
-    public void setEffetDroite(Effet effetDroite) {
-        this.effetDroite = effetDroite;
-    }
-
 }
