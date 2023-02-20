@@ -76,11 +76,8 @@ public class Reigns {
             reponse = scanner.nextLine();
         }
         // applique les malus
-        if(reponse.equals("G")){
-            question.effetGauche.AppliqueEffect(personnage);
-        }else{
-            question.effetGauche.AppliqueEffect(personnage);
-        }
+        question.effets.get(reponse).AppliqueEffect(personnage);
+
     }
 
     /**
@@ -107,11 +104,14 @@ public class Reigns {
         Question question1 = new Question(
                 "Main du roi",
                 "Le peuple souhaite libérer les prisonniers",
-                new Effet("G","Oui",HashMap.newHashMap(2)),
-                new Effet("D","Non", HashMap.newHashMap(1)));
-        question1.effetDroite.putEffetsJauges(TypeJauge.ARMEE, -5);
-        question1.effetDroite.putEffetsJauges(TypeJauge.PEUPLE, +5);
-        question1.effetGauche.putEffetsJauges(TypeJauge.PEUPLE, -7);
+                new HashMap<>(){{
+                    put("G", new Effet("G","Oui", HashMap.newHashMap(2)));
+                    put("D",new Effet("D","Non", HashMap.newHashMap(1)));
+                }}
+                );
+        question1.effets.get("D").putEffetsJauges(TypeJauge.ARMEE, -5);
+        question1.effets.get("D").putEffetsJauges(TypeJauge.PEUPLE, +5);
+        question1.effets.get("G").putEffetsJauges(TypeJauge.PEUPLE, -7);
         questions.add(question1);
         /*
         Question question2 = new Question(
