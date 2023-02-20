@@ -51,8 +51,8 @@ public class Question {
     public void afficheQuestion() {
         String result = "["+nomPersonnage+"] "
                 + question
-                + "[G: "+effetGauche
-                + ",D: "+effetDroite
+                + "[G: "+effetGauche.getNom()
+                + ",D: "+effetDroite.getNom()
                 + "]";
         System.out.println(result);
         effetGauche.afficheEffets();
@@ -123,13 +123,4 @@ public class Question {
         this.effetDroite = effetDroite;
     }
 
-    //a finir
-    public void appliqueEffet(Personnage personnage,String gD){
-        if (gD.equals("G")){
-            for (Map.Entry<TypeJauge, Integer> effet : effetGauche.getEffetsJauges().entrySet()) {
-                // a finir
-            }
-        }
-
-    }
 }
