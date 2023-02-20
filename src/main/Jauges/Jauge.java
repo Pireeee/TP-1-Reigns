@@ -8,7 +8,7 @@ import main.TypeJauge;
  * @author Julie Jacques / Lucien Mousin
  * @version 1.0
  */
-public abstract class Jauge {
+public class Jauge {
     /**
      * Le type de la jauge
      */

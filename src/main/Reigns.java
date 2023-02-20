@@ -1,5 +1,7 @@
 package main;
 
+import main.Jauges.JaugeManager;
+
 import java.util.*;
 
 /**
@@ -17,6 +19,8 @@ public class Reigns {
      * la banque de questions
      */
     private static ArrayList<Question> questions;
+
+    private static JaugeManager jaugeManager;
 
     /**
      * La méthode main lance le jeu Reigns. Il initialise les questions, le personnage,
@@ -36,18 +40,20 @@ public class Reigns {
 
         initPersonnage();
 
+        initJauges();
+
         System.out.println(personnage.getGenre().longRegne()
                 +" "+personnage.getNom());
 
-        personnage.AfficheJauges();
+        personnage.AfficheJauges(jaugeManager);
 
         // tirage des questions
         int nbTours = 0;
-        while(!personnage.finDuJeu()){
+        while(!Reigns.jaugeManager.finDuJeu()){
             nbTours++;
             Question question = getQuestionAleatoire();
             reponseQuestion(question);
-            personnage.AfficheJauges();
+            personnage.AfficheJauges(jaugeManager);
         }
 
         // fin du jeu
@@ -76,7 +82,7 @@ public class Reigns {
             reponse = scanner.nextLine();
         }
         // applique les malus
-        question.effets.get(reponse).AppliqueEffect();
+        question.effets.get(reponse).AppliqueEffect(jaugeManager);
 
     }
 
@@ -161,5 +167,10 @@ public class Reigns {
      */
     private static Question getQuestionAleatoire(){
         return questions.get((int) (Math.random()*questions.size()));
+    }
+
+    private static void initJauges(){
+
+        Reigns.jaugeManager = new JaugeManager();
     }
 }

@@ -52,9 +52,9 @@ public class Effet {
         }
         return result.toString();
     }
-    public void AppliqueEffect(){
+    public void AppliqueEffect(JaugeManager jaugeManager){
         for (TypeJauge type: this.effetsJauges.keySet()) {
-            JaugeManager.getJauges().get(type).addValeur( this.effetsJauges.get(type));
+            jaugeManager.getJauges().get(type).addValeur( this.effetsJauges.get(type));
         }
     }
 }
