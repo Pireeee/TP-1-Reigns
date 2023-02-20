@@ -60,7 +60,7 @@ public class Personnage {
      * Affiche les jauges de Clergé, Peuple, Armée et Finances du personnage.
      */
     public void AfficheJauges() {
-        
+        JaugeManager.afficheJauges();
     }
 
     /**

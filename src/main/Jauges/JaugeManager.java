@@ -21,4 +21,12 @@ public class JaugeManager {
              jauge.getValue().afficheJauge();
          }
     }
+    public static boolean finDuJeu() {
+        for (Map.Entry<TypeJauge, Jauge> jauge : JaugeManager.jauges.entrySet()) {
+            if (0 >= jauge.getValue().getValeur() || jauge.getValue().getValeur() >= 50) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
