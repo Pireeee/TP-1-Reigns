@@ -3,11 +3,22 @@ package main.Jauges;
 import main.TypeJauge;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class JaugeManager {
-    protected HashMap <TypeJauge, Integer> jauges;
+    protected static HashMap <TypeJauge, Jauge> jauges;
 
-    public JaugeManager(HashMap<TypeJauge, Integer> jauges) {
+    public  JaugeManager(HashMap<TypeJauge, Jauge> jauges) {
         this.jauges = jauges;
+    }
+
+    public static HashMap<TypeJauge, Jauge> getJauges() {
+        return jauges;
+    }
+
+    public static void afficheJauges(){
+         for (Map.Entry<TypeJauge, Jauge> jauge : JaugeManager.jauges.entrySet()){
+             jauge.getValue().afficheJauge();
+         }
     }
 }

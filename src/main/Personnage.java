@@ -18,6 +18,10 @@ public class Personnage {
      */
     protected Genre genre;
     /**
+     * La map contenant toute les jauges
+     */
+    protected JaugeManager jaugeManager;
+    /**
      * La jauge de Clergé
      */
     protected Jauge jaugeClerge;
@@ -56,11 +60,7 @@ public class Personnage {
      * Affiche les jauges de Clergé, Peuple, Armée et Finances du personnage.
      */
     public void AfficheJauges() {
-        jaugeClerge.afficheJauge();
-        jaugePeuple.afficheJauge();
-        jaugeArmee.afficheJauge();
-        jaugeFinance.afficheJauge();
-        System.out.println();
+        
     }
 
     /**
