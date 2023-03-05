@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="7e894cfb-b109-45f7-a148-5ae7649009e4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/question/BanqueQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/question/BanqueQuestion.java" afterDir="false" />
     </list>
+=======
+    <list default="true" id="6e158a1a-5df0-4baf-8107-6e571ac3dc1c" name="Changes" comment="" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,6 +37,19 @@
   }
 }]]></component>
   <component name="TaskManager">
+<<<<<<< Updated upstream
+=======
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6e158a1a-5df0-4baf-8107-6e571ac3dc1c" name="Changes" comment="" />
+      <created>1675259283620</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675259283620</updated>
+      <workItem from="1676379338537" duration="4083000" />
+      <workItem from="1676820744110" duration="168000" />
+      <workItem from="1676821611675" duration="3833000" />
+    </task>
+>>>>>>> Stashed changes
     <servers />
   </component>
   <component name="XDebuggerManager">
