@@ -27,6 +27,7 @@ public class JaugeManager {
              jauge.getValue().afficheJauge();
          }
     }
+    
     /**
      * Vérifie si le jeu est fini en vérifiant si une des jauges est à 0 ou 50.
      *

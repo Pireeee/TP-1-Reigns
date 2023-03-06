@@ -32,38 +32,19 @@ public class Reigns {
      * @param args les arguments de la ligne de commande
      */
     public static void main(String[] args){
-
         // début du jeu
-        System.out.println("Bienvenue sur Reigns");
-
-        questions = BanqueQuestion.init();
-
-        System.out.println("Création du personnage...");
-
-        initPersonnage();
-
-        initJauges();
-
-        System.out.println(personnage.getGenre().longRegne()
-                +" "+personnage.getNom());
-
-        personnage.AfficheJauges(jaugeManager);
-
+        Reigns.startGame();
         // tirage des questions
-        int nbTours = 0;
         while(!Reigns.jaugeManager.finDuJeu()){
-            nbTours++;
+            personnage.incrementReign();
             Question question = getQuestionAleatoire();
             reponseQuestion(question);
-            personnage.AfficheJauges(jaugeManager);
+            jaugeManager.afficheJauges();
         }
 
         // fin du jeu
-        System.out.println(
-                personnage.getNom()
-                        + " a perdu ! Son règne a duré "
-                        +nbTours
-                        + " tours");
+        Reigns.endGame();
+
 
     }
 
@@ -116,4 +97,29 @@ public class Reigns {
 
         Reigns.jaugeManager = new JaugeManager();
     }
+
+    private static void startGame(){
+        System.out.println("Bienvenue sur Reigns");
+
+        questions = BanqueQuestion.init();
+
+        System.out.println("Création du personnage...");
+
+        initPersonnage();
+
+        initJauges();
+
+        System.out.println(personnage.getGenre().longRegne()
+                +" "+personnage.getNom());
+
+        jaugeManager.afficheJauges();
+    }
+    private static void endGame(){
+        System.out.println(
+                personnage.getNom()
+                        + " a perdu ! Son règne a duré "
+                        + personnage.getReignDuration()
+                        + " tours");
+    }
+
 }
