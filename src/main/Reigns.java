@@ -37,36 +37,12 @@ public class Reigns {
         // tirage des questions
         while(!Reigns.jaugeManager.finDuJeu()){
             personnage.incrementReign();
-            Question question = getQuestionAleatoire();
-            reponseQuestion(question);
+            Question question = Question.getQuestionAleatoire(questions);
+            question.poseQuestion(jaugeManager);
             jaugeManager.afficheJauges();
         }
-
         // fin du jeu
         Reigns.endGame();
-
-
-    }
-
-    /**
-     * Cette fonction permet de gérer la réponse à une question donnée. Elle affiche la question, demande à
-     * l'utilisateur d'entrer une réponse (soit "G" soit "D") et en fonction de la réponse, elle appelle la méthode
-     * appropriée pour appliquer les conséquences sur les jauges du personnage.
-     * @param question La question à laquelle il faut répondre
-     */
-    private static void reponseQuestion(Question question){
-        question.afficheQuestion();
-        // récupère la réponse
-        Scanner scanner = new Scanner(System.in);
-        String reponse = "";
-        while(!reponse.equals("G") && !reponse.equals("D")){
-            System.out.println("Entrez la réponse (G ou D)");
-            System.out.flush();
-            reponse = scanner.nextLine();
-        }
-        // applique les malus
-        question.getReponses().get(reponse).AppliqueReponse(jaugeManager);
-
     }
 
     /**
@@ -85,16 +61,7 @@ public class Reigns {
         Reigns.personnage = new Personnage(nom, genre==1 ? Genre.ROI : Genre.REINE );
     }
 
-    /**
-     * Cette fonction permet de tirer une question aléatoire dans la banque de questions.
-     * @return Une question aléatoire
-     */
-    private static Question getQuestionAleatoire(){
-        return questions.get((int) (Math.random()*questions.size()));
-    }
-
     private static void initJauges(){
-
         Reigns.jaugeManager = new JaugeManager();
     }
 

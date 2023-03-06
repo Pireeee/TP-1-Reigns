@@ -1,7 +1,5 @@
 package main.Jauges;
 
-import main.TypeJauge;
-
 /**
  * Représente une jauge avec un nom, une valeur et un type.
  *

@@ -3,7 +3,7 @@ package main.question;
 import java.util.ArrayList;
 import java.util.List;
 
-import main.TypeJauge;
+import main.Jauges.TypeJauge;
 
 public class BanqueQuestion {
     public static List<Question> init(){

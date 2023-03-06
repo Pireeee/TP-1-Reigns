@@ -1,7 +1,11 @@
 package main.question;
 
+import main.Jauges.JaugeManager;
+
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  * La classe Question représente une question avec ses effets sur les jauges d'un personnage
@@ -89,4 +93,29 @@ public class Question {
         this.reponses.put(direction,reponse);
     }
 
+    /**
+     * Cette fonction permet de gérer la réponse à une question donnée. Elle affiche la question, demande à
+     * l'utilisateur d'entrer une réponse (soit "G" soit "D") et en fonction de la réponse, elle appelle la méthode
+     * appropriée pour appliquer les conséquences sur les jauges du personnage.
+     */
+    public void poseQuestion(JaugeManager jauges){
+        this.afficheQuestion();
+        // récupère la réponse
+        Scanner scanner = new Scanner(System.in);
+        String reponse = "";
+        while(!reponse.equals("G") && !reponse.equals("D")){
+            System.out.println("Entrez la réponse (G ou D)");
+            System.out.flush();
+            reponse = scanner.nextLine();
+        }
+        // applique les malus
+        this.getReponses().get(reponse).AppliqueReponse(jauges);
+    }
+    /**
+     * Cette fonction permet de tirer une question aléatoire dans la banque de questions.
+     * @return Une question aléatoire
+     */
+    public static Question getQuestionAleatoire(List<Question> questions){
+        return questions.get((int) (Math.random()*questions.size()));
+    }
 }

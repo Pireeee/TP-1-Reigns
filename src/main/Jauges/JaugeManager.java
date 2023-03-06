@@ -1,7 +1,5 @@
 package main.Jauges;
 
-import main.TypeJauge;
-
 import java.util.HashMap;
 import java.util.Map;
 
