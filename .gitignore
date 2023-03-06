@@ -30,3 +30,7 @@ bin/
 
 ###
 .idea/workspace.xml
+.idea/
+
+###
+*.iml

@@ -1,13 +1,5 @@
 package main;
 
-import main.Jauges.*;
-
-/**
- * Représente un personnage ayant un nom, un genre, et des jauges de Clergé, Peuple, Armée et Finances.
- *
- * @author Julie Jacques / Lucien Mousin
- * @version 1.0
- */
 public class Personnage {
     /**
      * Le nom du personnage
@@ -24,16 +16,11 @@ public class Personnage {
      * @param nom Le nom du personnage
      * @param genre Le genre du personnage
      */
+    protected int reignDuration;
     public Personnage(String nom, Genre genre) {
         this.nom = nom;
         this.genre = genre;
-    }
-
-    /**
-     * Affiche les jauges de Clergé, Peuple, Armée et Finances du personnage.
-     */
-    public void AfficheJauges(JaugeManager jaugeManager) {
-        jaugeManager.afficheJauges();
+        this.reignDuration = 0;
     }
 
     /**
@@ -63,5 +50,13 @@ public class Personnage {
      */
     public void setGenre(Genre genre) {
         this.genre = genre;
+    }
+
+    public int getReignDuration() {
+        return reignDuration;
+    }
+
+    public void incrementReign(){
+        this.reignDuration++;
     }
 }

@@ -1,6 +1,4 @@
-package main.Jauges;
-
-import main.TypeJauge;
+package main.jauges;
 
 /**
  * Représente une jauge avec un nom, une valeur et un type.

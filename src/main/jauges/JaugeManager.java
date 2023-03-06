@@ -1,6 +1,4 @@
-package main.Jauges;
-
-import main.TypeJauge;
+package main.jauges;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,6 +25,7 @@ public class JaugeManager {
              jauge.getValue().afficheJauge();
          }
     }
+    
     /**
      * Vérifie si le jeu est fini en vérifiant si une des jauges est à 0 ou 50.
      *

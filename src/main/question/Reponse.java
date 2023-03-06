@@ -1,8 +1,8 @@
 package main.question;
 
 import java.util.HashMap;
-import main.Jauges.JaugeManager;
-import main.TypeJauge;
+import main.jauges.JaugeManager;
+import main.jauges.TypeJauge;
 
 import java.util.Map;
 
@@ -17,24 +17,8 @@ public class Reponse {
         this.effets = new HashMap<>();
     }
 
-    public String getDirection() {
-        return direction;
-    }
-
-    public void setDirection(String direction) {
-        this.direction = direction;
-    }
-
     public String getNom() {
         return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public Map<TypeJauge, Integer> getEffets() {
-        return effets;
     }
 
     public void putEffets(TypeJauge jauge, Integer valeur) {
