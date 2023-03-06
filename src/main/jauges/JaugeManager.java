@@ -32,12 +32,9 @@ public class JaugeManager {
      * @return true si le jeu est fini, false sinon
      */
     public boolean finDuJeu() {
-        for (Map.Entry<TypeJauge, Jauge> jauge : this.jauges.entrySet()) {
-            if (0 >= jauge.getValue().getValeur() || jauge.getValue().getValeur() >= 50) {
-                return true;
-            }
-        }
-        return false;
+        return this.jauges.entrySet()
+                .stream()
+                .anyMatch(entry -> entry.getValue().getValeur() <= 0 || entry.getValue().getValeur() >= 50);
     }
 
     public static JaugeManager init(){
