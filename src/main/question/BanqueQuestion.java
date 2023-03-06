@@ -33,30 +33,26 @@ public class BanqueQuestion {
                 .addReponse("D","Ne rien faire")
                 .addEffet("G", TypeJauge.CLERGE,-5)
                 .build();
-        questions.add(question2);
-        return questions;
-        /*
-
-        Question question4 = new Question(
-                "Main du roi",
-                "Le roi Baratheon rassemble son armée",
-                "Le soutenir",
-                "Rester neutre");
-        question4.ajouteEffetGauche(TypeJauge.ARMEE, +3);
-        question4.ajouteEffetGauche(TypeJauge.FINANCE, -3);
-        question4.ajouteEffetGauche(TypeJauge.CLERGE, -3);
-        question4.ajouteEffetDroite(TypeJauge.PEUPLE, +3);
+        questions.add(question3);
+        Question question4 =QuestionBuilder.builder("Main du roi","Le roi Baratheon rassemble son armée")
+                .addReponse("G","Le soutenir")
+                .addEffet("G", TypeJauge.ARMEE,+3)
+                .addEffet("G", TypeJauge.FINANCE,-3)
+                .addReponse("D","Rester neutre")
+                .addEffet("G", TypeJauge.CLERGE,-3)
+                .addEffet("G", TypeJauge.PEUPLE,+3)
+                .build();
         questions.add(question4);
-        Question question5 = new Question(
-                "Paysan",
-                "Abondance de récoltes cette année",
-                "Taxer énormément",
-                "Taxer un tout petit peu");
-        question5.ajouteEffetGauche(TypeJauge.FINANCE, +10);
-        question5.ajouteEffetGauche(TypeJauge.PEUPLE, -5);
-        question5.ajouteEffetDroite(TypeJauge.FINANCE, +1);
-        question5.ajouteEffetDroite(TypeJauge.PEUPLE, -3);
+
+        Question question5 =QuestionBuilder.builder("Paysan","Abondance de récoltes cette année")
+                .addReponse("G","Taxer énormément")
+                .addEffet("G", TypeJauge.PEUPLE,-5)
+                .addEffet("G", TypeJauge.FINANCE,+10)
+                .addReponse("D","Taxer un tout petit peu")
+                .addEffet("G", TypeJauge.FINANCE,+1)
+                .addEffet("G", TypeJauge.PEUPLE,-3)
+                .build();
         questions.add(question5);
-        */
+        return questions;
     }
 }
