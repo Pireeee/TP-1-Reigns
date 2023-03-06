@@ -7,12 +7,10 @@ import main.jauges.TypeJauge;
 import java.util.Map;
 
 public class Reponse {
-    private String direction;
     private String nom;
     private Map<TypeJauge,Integer> effets;
 
-    public Reponse(String direction, String nom) {
-        this.direction = direction;
+    public Reponse(String nom) {
         this.nom = nom;
         this.effets = new HashMap<>();
     }
@@ -25,9 +23,9 @@ public class Reponse {
         this.effets.put(jauge,valeur);
     }
 
-    public String afficheReponse() {
+    public String afficheReponse(String direction) {
         StringBuilder result = new StringBuilder();
-        result.append("Effet "+this.direction);
+        result.append("Effet "+direction);
         for (Map.Entry<TypeJauge, Integer> effet : this.effets.entrySet()) {
             result.append("; jauge ").append(effet.getKey()).append(":");
             if (effet.getValue() > 0) {
