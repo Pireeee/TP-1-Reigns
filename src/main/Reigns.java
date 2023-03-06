@@ -34,6 +34,7 @@ public class Reigns {
     public static void main(String[] args){
         // début du jeu
         Reigns.startGame();
+
         // tirage des questions
         while(!Reigns.jaugeManager.finDuJeu()){
             personnage.incrementReign();
@@ -93,11 +94,6 @@ public class Reigns {
         return questions.get((int) (Math.random()*questions.size()));
     }
 
-    private static void initJauges(){
-
-        Reigns.jaugeManager = new JaugeManager();
-    }
-
     private static void startGame(){
         System.out.println("Bienvenue sur Reigns");
 
@@ -107,7 +103,7 @@ public class Reigns {
 
         initPersonnage();
 
-        initJauges();
+        Reigns.jaugeManager = new JaugeManager();
 
         System.out.println(personnage.getGenre().longRegne()
                 +" "+personnage.getNom());
