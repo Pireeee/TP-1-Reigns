@@ -13,7 +13,7 @@ public class QuestionBuilder {
     }
 
     public QuestionBuilder addReponse(String direction, String nom) {
-        this.question.addReponse(direction, new Reponse(direction,nom));
+        this.question.addReponse(direction, new Reponse(nom));
         return this;
     }
 

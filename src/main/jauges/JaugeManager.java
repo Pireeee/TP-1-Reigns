@@ -40,6 +40,8 @@ public class JaugeManager {
         return false;
     }
 
-
+    public static JaugeManager init(){
+        return new JaugeManager();
+    }
 
 }

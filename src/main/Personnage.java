@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Scanner;
+
 public class Personnage {
     /**
      * Le nom du personnage
@@ -30,28 +32,6 @@ public class Personnage {
     public String getNom() {
         return nom;
     }
-    /**
-     * Modifie le nom du personnage
-     * @param nom Le nouveau nom du personnage
-     */
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-    /**
-     * Retourne le genre du personnage
-     * @return le genre du personnage
-     */
-    public Genre getGenre() {
-        return genre;
-    }
-    /**
-     * Modifie le genre du personnage
-     * @param genre Le nouveau genre du personnage
-     */
-    public void setGenre(Genre genre) {
-        this.genre = genre;
-    }
-
     public int getReignDuration() {
         return reignDuration;
     }
@@ -59,4 +39,17 @@ public class Personnage {
     public void incrementReign(){
         this.reignDuration++;
     }
+     public void print(){
+         System.out.println(this.genre.longRegne()
+                 +" "+this.nom);
+     }
+     public static Personnage init(){
+         Scanner scanner = new Scanner(System.in);
+         System.out.println("Entrez le nom du personnage: ");
+         System.out.flush();
+         String nom = scanner.nextLine();
+         System.out.println(
+                 "Faut-il vous appeler Roi ou Reine ? (1 pour Roi, 2 pour Reine)");
+         int genre = scanner.nextInt();
+         return new Personnage(nom, genre==1 ? Genre.ROI : Genre.REINE );    }
 }

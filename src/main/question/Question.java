@@ -1,6 +1,7 @@
 package main.question;
 
 import main.jauges.JaugeManager;
+import main.jauges.TypeJauge;
 
 import java.util.HashMap;
 import java.util.List;
@@ -45,7 +46,7 @@ public class Question {
                 + "]";
         System.out.println(result);
         for(String gD: reponses.keySet()){
-            reponses.get(gD).afficheReponse();
+            reponses.get(gD).afficheReponse(gD);
         }
         System.out.flush();
     }
