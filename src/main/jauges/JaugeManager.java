@@ -1,4 +1,4 @@
-package main.Jauges;
+package main.jauges;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,8 +1,8 @@
 package main.question;
 
 import java.util.HashMap;
-import main.Jauges.JaugeManager;
-import main.Jauges.TypeJauge;
+import main.jauges.JaugeManager;
+import main.jauges.TypeJauge;
 
 import java.util.Map;
 

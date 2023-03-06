@@ -1,4 +1,4 @@
-package main.Jauges;
+package main.jauges;
 
 /**
  * Enumeration des différents types de jauges

@@ -1,7 +1,7 @@
 package main;
 
 import main.question.BanqueQuestion;
-import main.Jauges.JaugeManager;
+import main.jauges.JaugeManager;
 import main.question.Question;
 
 import java.util.*;
@@ -65,18 +65,12 @@ public class Reigns {
 
     private static void startGame(){
         System.out.println("Bienvenue sur Reigns");
-
         questions = BanqueQuestion.init();
-
         System.out.println("Création du personnage...");
-
         initPersonnage();
-
         Reigns.jaugeManager = new JaugeManager();
-
         System.out.println(personnage.getGenre().longRegne()
                 +" "+personnage.getNom());
-
         jaugeManager.afficheJauges();
     }
     private static void endGame(){
@@ -86,5 +80,4 @@ public class Reigns {
                         + personnage.getReignDuration()
                         + " tours");
     }
-
 }

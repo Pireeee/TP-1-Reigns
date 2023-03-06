@@ -1,6 +1,6 @@
 package main.question;
 
-import main.Jauges.TypeJauge;
+import main.jauges.TypeJauge;
 
 public class QuestionBuilder {
 

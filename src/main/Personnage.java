@@ -1,13 +1,5 @@
 package main;
 
-import main.Jauges.*;
-
-/**
- * Représente un personnage ayant un nom, un genre, et des jauges de Clergé, Peuple, Armée et Finances.
- *
- * @author Julie Jacques / Lucien Mousin
- * @version 1.0
- */
 public class Personnage {
     /**
      * Le nom du personnage
