@@ -10,7 +10,8 @@ import java.util.*;
  * La classe Reigns représente le programme principal du jeu Reigns
  *
  * @author Julie Jacques / Lucien Mousin
- * @version 1.0
+ * @Correctors CLEMENT Pierre / COLLET François
+ * @version 2.0
  */
 public class Reigns {
     /**
